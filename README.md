@@ -1,9 +1,8 @@
 # Campus-Drive-Management
 
-⭐ CAMPUS Drive
+🌟 Campus Drive Management System
 
-A simple Django-based campus recruitment portal that displays company drives and allows students to view company details and apply/register for positions. This repository contains templates, models, URL routing, and basic static/media handling — ready to run locally and extend.
-
+Campus Drive Management System — A clean and modern Django-based campus recruitment portal that displays company drives, allows student registrations with resume uploads, and provides full admin control for managing drives, users, and media files. Built with Django 5.x, Bootstrap, SQLite, and Pillow.
 📌 Table of Contents
 
 Project Overview
@@ -18,40 +17,43 @@ Quick Setup — Run Locally
 
 Database & Media Handling
 
-Create Admin / Access Django Admin
+Django Admin Access
 
-Recommended requirements.txt
+requirements.txt
 
-License & Contact
+License
 
 📘 Project Overview
 
-CAMPUS Drive is a minimal Django application that lists company drives (Companyinfo) and lets users register for positions via a registration form (Register).
-It includes user sign-up/login templates and basic static + media configuration (images and resumes).
+CAMPUS Drive is a Django web application designed to streamline campus recruitment by displaying company drives (from the Companyinfo model) and allowing students to apply using a simple registration form (Register model).
+
+The project includes:
+
+Login & Sign-up pages
+
+Company listing with images
+
+Resume upload
+
+Django admin integration
+
+Static + media handling configured
 
 🛠 Tech Stack
-
-Python (3.9+)
-
-Django 5.x (project created with Django 5.0.2)
-
-SQLite (default database)
-
-Bootstrap (via CDN)
-
-Pillow (image handling)
-
+Component	Technology
+Language	Python 3.9+
+Framework	Django 5.x (built using Django 5.0.2)
+Frontend	HTML, CSS, Bootstrap CDN
+Database	SQLite
+Media Handling	Pillow
 ✨ Features
 
-Home / Landing page showing company cards with image, company name, and job position
-
-Sign-up and Login pages
-
-Company Apply flow (registration form with resume upload)
-
-Admin management of companies and users
-
-Media file support (company images, resumes)
+✔️ Clean landing page with company cards (logo, position, description)
+✔️ User Sign-up & Login
+✔️ Apply/Register page with resume upload
+✔️ Django admin panel for managing companies & users
+✔️ Static & Media configuration included
+✔️ Fully extendable for authentication, dashboards, or API integration
 
 📂 Project Structure
 campus/
@@ -63,20 +65,19 @@ campus/
 │  └─ asgi.py
 ├─ myapp/
 │  ├─ admin.py
-│  ├─ apps.py
 │  ├─ models.py
-│  ├─ urls.py
 │  ├─ views.py
-│  └─ tests.py
+│  ├─ urls.py
+│  └─ apps.py
 ├─ templates/
 │  ├─ index.html
 │  ├─ home.html
 │  ├─ login.html
 │  ├─ register.html
-│  ├─ sign up/singup.html
+│  ├─ signup.html
 │  └─ success.html
 ├─ static/
-│  └─ images (cicon.png, campus.png, etc.)
+│  └─ images/
 ├─ media/
 └─ db.sqlite3
 
@@ -88,54 +89,59 @@ cd campus
 2️⃣ Create & activate virtual environment
 python -m venv venv
 
-# Windows
+
+Windows
+
 venv\Scripts\activate
 
-# macOS / Linux
+
+macOS/Linux
+
 source venv/bin/activate
 
 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-4️⃣ Apply migrations
+4️⃣ Run migrations
 python manage.py makemigrations
 python manage.py migrate
 
-5️⃣ Create superuser (optional)
+5️⃣ Optional: Create an admin user
 python manage.py createsuperuser
 
-6️⃣ Run development server
+6️⃣ Start development server
 python manage.py runserver
-
-
 
 🗂 Database & Media Handling
 
-Uses SQLite (db.sqlite3)
-
-Media storage is configured with:
+✔ Uses SQLite as the default DB
+✔ Media files configured with:
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-Media files (images/resumes) are served correctly during development.
+✔ Supports company images & resume uploads
 
-🔑 Create Admin / Access Django Admin
+🔑 Django Admin Access
 
-myapp/admin.py registers:
+Your myapp/admin.py registers:
 
 Userdata
 
 Companyinfo
 
-Admin panel allows adding:
+From Django Admin, you can:
 
-Company details
+Add/update company recruitment drives
 
-Company image
+Upload company logos
 
-User entries
+Manage user registrations
+
+Access:
+
+http://127.0.0.1:8000/admin/
 
 📄 Recommended requirements.txt
 Django==5.0.2
@@ -143,7 +149,9 @@ Pillow>=10.0.0
 
 📝 License & Contact
 
-This project can be used for learning, academic submissions, or extensions.
-Add a license of your choice (MIT recommended).
+This project can be used freely for learning, academic purposes, or extended for your own projects.
 
-For any queries, feel free to contact.
+Recommended License: MIT License
+
+
+

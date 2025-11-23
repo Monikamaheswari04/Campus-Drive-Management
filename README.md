@@ -1,70 +1,92 @@
-Campus Drive Management System
-A clean and modern Django-based campus recruitment portal that displays company drives, allows student registrations with resume uploads, and provides complete admin control. Built using Django 5.x, Bootstrap, SQLite, and Pillow.
 
-📘 Project Overview
-The Campus Drive Management System helps streamline campus recruitment by displaying company drives and allowing students to apply with resume uploads. It includes authentication, Django admin integration, media handling, and extendable modular structure.
 
-🛠 Tech Stack
-• **Language:** Python 3.9+
-• **Framework:** Django 5.x (5.0.2)
-• **Frontend:** HTML, CSS, Bootstrap
-• **Database:** SQLite
-• **Media:** Pillow
+## ✅ Project Overview
 
-✨ Features
-✔️ Clean landing page with company cards
-✔️ User Sign-up & Login
-✔️ Resume upload functionality
-✔️ Django admin integration
-✔️ Static & media configuration included
-✔️ Fully extendable for future features
+**ProU Store** is a responsive e-commerce frontend built with React. It demonstrates key frontend development skills, focusing on **UI/UX, interactivity, and clean code** using **mock JSON data**.
 
-📂 Professional Project Structure
-campus/
-│── manage.py
-│── db.sqlite3
-│── requirements.txt
-│── media/
-│── static/
-│    └── images/
-│
-├── myproject/
-│    ├── __init__.py
-│    ├── settings.py
-│    ├── urls.py
-│    ├── asgi.py
-│    └── wsgi.py
-│
-└── myapp/
-     ├── __init__.py
-     ├── admin.py
-     ├── models.py
-     ├── views.py
-     ├── urls.py
-     ├── forms.py
-     └── templates/
-           ├── index.html
-           ├── login.html
-           ├── signup.html
-           ├── register.html
-           └── success.html
+Features implemented:
 
-🚀 Quick Setup
-1️⃣ Clone the repository
-   git clone <repo-url>
+* **Responsive product listing** with hover effects
+* **Wishlist & Cart functionality** with dynamic badges
+* **Dark/Light mode toggle**
+* **Modal-based Authentication** (Login/Signup)
+* **Add wishlist items directly to the cart**
+* **Interactive animations using Framer Motion**
+* Fully functional **desktop and mobile layouts**
 
-2️⃣ Create virtual environment
-   python -m venv venv
+---
 
-3️⃣ Install dependencies
-   pip install -r requirements.txt
+## 🛠 Tech Stack
 
-4️⃣ Run migrations
-   python manage.py migrate
+* **Frontend Framework:** React.js
+* **Styling:** Tailwind CSS
+* **Routing:** React Router DOM
+* **State Management:** React Hooks (`useState`, custom hooks like `useCart`, `useWishlist`, `useAuth`)
+* **Animations:** Framer Motion
+* **Mock Data:** JSON for products, wishlist, and cart
 
-5️⃣ Start server
-   python manage.py runserver
+---
 
-📝 License
-Recommended: MIT License
+## 🚀 Setup Instructions
 
+1. Clone the repository:
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd <YOUR_PROJECT_FOLDER>
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+4. Open your browser at `http://localhost:3000` to view the app.
+
+---
+
+
+## 🎯 Assumptions & Notes
+
+* **Mock JSON data** is used for products, cart, and wishlist. No backend integration is implemented.
+* Users **must log in via modal** to add items to cart or wishlist.
+* Dark/Light mode preference is saved in **localStorage**.
+* Wishlist items can be **added directly to the cart**, similar to modern e-commerce sites.
+* UI and animations are designed to closely mimic real-world shopping experiences.
+
+---
+
+## 🌟 Bonus Features Implemented
+
+* Dark/Light mode toggle with smooth transition
+* Animated hover effects on products using Framer Motion
+* Cart quantity badges dynamically update
+* Modal authentication with switchable login/signup
+* Fully responsive design (desktop & mobile)
+
+---
+
+## 📌 Future Enhancements (Optional)
+
+* Product filtering and sorting by category or price
+* Persistent user login using local storage or backend auth
+* Integration with a real backend API
+* Deployment on Netlify/Vercel for live demo
+
+---
+
+## 🎯 Conclusion
+
+This project demonstrates **React frontend development skills**, focusing on **responsiveness, interactivity, and clean code**. All features work with mock data and simulate a real-world e-commerce experience.
+
+---
+
+**Prepared by:** Monika A.D.
+**Date:** November 2025

@@ -47,38 +47,7 @@ cells**, and **Django beginners** building real-world applications.
 
 ------------------------------------------------------------------------
 
-## 📂 Project Structure
 
-    campus/
-    │── manage.py
-    │── db.sqlite3
-    │── requirements.txt
-    │── media/
-    │── static/
-    │    └── images/
-    │
-    ├── myproject/
-    │    ├── __init__.py
-    │    ├── settings.py
-    │    ├── urls.py
-    │    ├── asgi.py
-    │    └── wsgi.py
-    │
-    └── myapp/
-         ├── __init__.py
-         ├── admin.py
-         ├── models.py
-         ├── views.py
-         ├── urls.py
-         ├── forms.py
-         └── templates/
-               ├── index.html
-               ├── login.html
-               ├── signup.html
-               ├── register.html
-               └── success.html
-
-------------------------------------------------------------------------
 
 ## 🚀 Setup Instructions
 

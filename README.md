@@ -1,92 +1,133 @@
+🎓 Campus Drive Management System
 
+A clean and modern Django-based Campus Recruitment Portal that displays company drives, allows students to register and upload resumes, and provides complete admin control.
+Built using Django 5.x, Bootstrap, SQLite, and Pillow.
 
-## ✅ Project Overview
+📘 Project Overview
 
-The Campus Drive Management System helps streamline campus recruitment by displaying company drives and allowing students to apply with resume uploads. It includes authentication, Django admin integration, media handling, and extendable modular structure.
+The Campus Drive Management System streamlines the campus placement workflow by:
 
-Features implemented:
+Displaying current company drives
 
-* **Responsive product listing** with hover effects
-* **Wishlist & Cart functionality** with dynamic badges
-* **Dark/Light mode toggle**
-* **Modal-based Authentication** (Login/Signup)
-* **Add wishlist items directly to the cart**
-* **Interactive animations using Framer Motion**
-* Fully functional **desktop and mobile layouts**
+Allowing students to register & upload resumes
 
----
+Providing a secure authentication system
 
-## 🛠 Tech Stack
+Offering Django Admin control for managing drives, users, and media
 
-* **Frontend Framework:** React.js
-* **Styling:** Tailwind CSS
-* **Routing:** React Router DOM
-* **State Management:** React Hooks (`useState`, custom hooks like `useCart`, `useWishlist`, `useAuth`)
-* **Animations:** Framer Motion
-* **Mock Data:** JSON for products, wishlist, and cart
+Maintaining a modular, extendable project structure
 
----
+This project is ideal for college placements, training & placement departments, and Django beginners looking to build real-world applications.
 
-## 🚀 Setup Instructions
+✨ Features Implemented
 
-1. Clone the repository:
+✔️ Clean & responsive landing page
+✔️ Student Signup & Login
+✔️ Resume upload (PDF/DOC)
+✔️ Company-wise drive registration
+✔️ Django Admin Panel for full CRUD operations
+✔️ Static & media configuration included
+✔️ Modular structure ready for future expansion
 
-```bash
+🛠 Tech Stack
+Category	Technology
+Language	Python 3.9+
+Framework	Django 5.x (5.0.2)
+Frontend	HTML, CSS, Bootstrap
+Database	SQLite
+Media Handling	Pillow
+📂 Professional Project Structure
+campus/
+│── manage.py
+│── db.sqlite3
+│── requirements.txt
+│── media/
+│── static/
+│    └── images/
+│
+├── myproject/
+│    ├── __init__.py
+│    ├── settings.py
+│    ├── urls.py
+│    ├── asgi.py
+│    └── wsgi.py
+│
+└── myapp/
+     ├── __init__.py
+     ├── admin.py
+     ├── models.py
+     ├── views.py
+     ├── urls.py
+     ├── forms.py
+     └── templates/
+           ├── index.html
+           ├── login.html
+           ├── signup.html
+           ├── register.html
+           └── success.html
+
+🚀 Setup Instructions
+1️⃣ Clone the Repository
 git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_PROJECT_FOLDER>
-```
+cd campus
 
-2. Install dependencies:
+2️⃣ Create Virtual Environment
+python -m venv venv
 
-```bash
-npm install
-```
+3️⃣ Activate Virtual Environment
 
-3. Start the development server:
+Windows
 
-```bash
-npm start
-```
-
-4. Open your browser at `http://localhost:3000` to view the app.
-
----
+venv\Scripts\activate
 
 
-## 🎯 Assumptions & Notes
+Mac/Linux
 
-* **Mock JSON data** is used for products, cart, and wishlist. No backend integration is implemented.
-* Users **must log in via modal** to add items to cart or wishlist.
-* Dark/Light mode preference is saved in **localStorage**.
-* Wishlist items can be **added directly to the cart**, similar to modern e-commerce sites.
-* UI and animations are designed to closely mimic real-world shopping experiences.
+source venv/bin/activate
 
----
+4️⃣ Install Dependencies
+pip install -r requirements.txt
 
-## 🌟 Bonus Features Implemented
+5️⃣ Apply Migrations
+python manage.py migrate
 
-* Dark/Light mode toggle with smooth transition
-* Animated hover effects on products using Framer Motion
-* Cart quantity badges dynamically update
-* Modal authentication with switchable login/signup
-* Fully responsive design (desktop & mobile)
+6️⃣ Run Development Server
+python manage.py runserver
 
----
 
-## 📌 Future Enhancements (Optional)
+Your app is now live at:
+👉 http://127.0.0.1:8000/
 
-* Product filtering and sorting by category or price
-* Persistent user login using local storage or backend auth
-* Integration with a real backend API
-* Deployment on Netlify/Vercel for live demo
+🎯 Assumptions & Notes
 
----
+Students must register/login before applying for any drive
 
-## 🎯 Conclusion
+Admin manages all drive details through Django Admin Panel
 
-This project demonstrates **React frontend development skills**, focusing on **responsiveness, interactivity, and clean code**. All features work with mock data and simulate a real-world e-commerce experience.
+Resume uploads are stored in the media folder
 
----
+Provided structure is extendable for future modules like:
 
-**Prepared by:** Monika A.D.
-**Date:** November 2025
+Placement analytics
+
+Admin dashboards
+
+Drive shortlisting system
+
+🌟 Future Enhancements
+
+🔹 Add Email Notifications for drive registration
+🔹 Student Dashboard to view applied drives
+🔹 Company HR login module
+🔹 REST API integration for mobile apps
+🔹 Deployment on AWS/Render/Heroku
+
+📝 License
+
+Recommended License: MIT License
+
+👩‍💻 Author
+
+Monika A.D.
+B.Tech Artificial Intelligence & Data Science
+November 2025

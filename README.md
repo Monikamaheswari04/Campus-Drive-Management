@@ -2,7 +2,7 @@
 
 ## ✅ Project Overview
 
-**ProU Store** is a responsive e-commerce frontend built with React. It demonstrates key frontend development skills, focusing on **UI/UX, interactivity, and clean code** using **mock JSON data**.
+The Campus Drive Management System helps streamline campus recruitment by displaying company drives and allowing students to apply with resume uploads. It includes authentication, Django admin integration, media handling, and extendable modular structure.
 
 Features implemented:
 

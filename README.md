@@ -54,7 +54,7 @@ cells**, and **Django beginners** building real-world applications.
 ### 1️⃣ Clone the Repository
 
 ``` bash
-git clone <YOUR_REPOSITORY_URL>
+git clone <https://github.com/Monikamaheswari04/Campus-Drive-Management/>
 cd campus
 ```
 
@@ -69,7 +69,7 @@ python -m venv venv
 **Windows:**
 
 ``` bash
-venv\Scriptsctivate
+venv\Scripts activate
 ```
 
 **Mac/Linux:**
@@ -102,10 +102,10 @@ python manage.py runserver
 
 ## 🌟 Future Enhancements
 
--   📩 Email notifications for drive applications\
--   📊 Student dashboard with applied drive history\
--   🏢 HR login module\
--   📱 API integration for mobile apps\
+-   📩 Email notifications for drive applications
+-   📊 Student dashboard with applied drive history
+-   🏢 HR login module
+-   📱 API integration for mobile apps
 -   ☁ Deployment on AWS / Render / Heroku
 
 ------------------------------------------------------------------------
@@ -118,6 +118,6 @@ Recommended License: **MIT License**
 
 ## 👩‍💻 Author
 
-**Monika A.D**\
-*B.Tech Artificial Intelligence & Data Science*\
+**Monika A.D**
+*B.Tech Artificial Intelligence & Data Science*
 *November 2025*

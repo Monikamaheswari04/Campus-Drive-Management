@@ -2,7 +2,7 @@
 
 A clean and modern **Django-based Campus Recruitment Portal** that
 displays company drives, allows students to register with resume
-uploads, and provides full admin control.\
+uploads, and provides full admin control.
 Built using **Django 5.x, Bootstrap, SQLite, and Pillow**.
 
 ------------------------------------------------------------------------
@@ -12,10 +12,10 @@ Built using **Django 5.x, Bootstrap, SQLite, and Pillow**.
 The **Campus Drive Management System** streamlines the placement
 workflow by:
 
--   Displaying current company drives\
--   Allowing students to register & upload resumes\
--   Providing a secure authentication system\
--   Offering Django Admin control for managing drives, users, and media\
+-   Displaying current company drives
+-   Allowing students to register & upload resumes
+-   Providing a secure authentication system
+-   Offering Django Admin control for managing drives, users, and media
 -   Maintaining a modular, extendable project structure
 
 This system is ideal for **college placements**, **training & placement
@@ -25,24 +25,24 @@ cells**, and **Django beginners** building real-world applications.
 
 ## ✨ Features Implemented
 
--   ✔️ Clean & responsive landing page\
--   ✔️ Student Sign-up & Login\
--   ✔️ Resume upload (PDF/DOC)\
--   ✔️ Company-wise drive registration\
--   ✔️ Django Admin Panel for full CRUD operations\
--   ✔️ Static & media configuration included\
+-   ✔️ Clean & responsive landing page
+-   ✔️ Student Sign-up & Login
+-   ✔️ Resume upload (PDF/DOC)
+-   ✔️ Company-wise drive registration
+-   ✔️ Django Admin Panel for full CRUD operations
+-   ✔️ Static & media configuration included
 -   ✔️ Extendable modular structure
 
 ------------------------------------------------------------------------
 
 ## 🛠 Tech Stack
 
-**Category \| Technology**
+**Category \ Technology**
 
--   **Language:** Python 3.9+\
--   **Framework:** Django 5.x (5.0.2)\
--   **Frontend:** HTML, CSS, Bootstrap\
--   **Database:** SQLite\
+-   **Language:** Python 3.9+
+-   **Framework:** Django 5.x (5.0.2)
+-   **Frontend:** HTML, CSS, Bootstrap
+-   **Database:** SQLite
 -   **Media Handling:** Pillow
 
 ------------------------------------------------------------------------

@@ -1,24 +1,20 @@
 from pathlib import Path
 import os
-import environ
-
-# Initialize environment variables
-env = environ.Env(
-    DEBUG=(bool, False)
-)
-environ.Env.read_env()  # reads .env file if present
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='unsafe-secret-key-for-dev-only')
-DEBUG = env('DEBUG', default=False)
 
-# Allow Render URLs (replace with your Render app URL in production)
+# Secret key from environment variable for production
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'unsafe-dev-key-for-local')
+
+# DEBUG mode from environment variable
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+# Allow all hosts for Render (replace '*' with your Render URL if desired)
 ALLOWED_HOSTS = ['*']
 
-# Application definition
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,15 +55,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-# Database
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # can switch to Postgres if needed
+        'ENGINE': 'django.db.backends.sqlite3',  # Switch to Postgres if needed
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-# Password validation
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
@@ -75,20 +71,19 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
-# Internationalization
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Render serves static files from here
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# Media files (optional)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Default primary key field type
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

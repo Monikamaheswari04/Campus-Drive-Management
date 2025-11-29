@@ -1,23 +1,28 @@
-
-
 from pathlib import Path
 import os
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# ✔ SECRET KEY (use Render env variable or fallback for local)
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-65w^ta3gw8%w7j5fcf54bgizjru07z6=x5kz%4kj-124_7uemg'
+)
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-65w^ta3gw8%w7j5fcf54bgizjru07z6=x5kz%4kj-124_7uemg')
+# ✔ DEBUG (Render will set DJANGO_DEBUG=False)
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
+# ✔ ALLOWED_HOSTS (works for Render)
+ALLOWED_HOSTS = [
+    'campus-drive-system.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
-
-
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')  # e.g., 'example.com,www.example.com'
-
-
+# ────────────────────────────────────────────────
+# INSTALLED APPS
+# ────────────────────────────────────────────────
 INSTALLED_APPS = [
-    # Default Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -25,13 +30,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Your apps
     'myapp',
 ]
 
+# ────────────────────────────────────────────────
+# MIDDLEWARE
+# ────────────────────────────────────────────────
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -42,10 +50,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myproject.urls'
 
+# ────────────────────────────────────────────────
+# TEMPLATES
+# ────────────────────────────────────────────────
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Use pathlib for paths
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -60,6 +71,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
+# ────────────────────────────────────────────────
+# DATABASE
+# ────────────────────────────────────────────────
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -67,7 +81,9 @@ DATABASES = {
     }
 }
 
-
+# ────────────────────────────────────────────────
+# PASSWORD VALIDATION
+# ────────────────────────────────────────────────
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -75,27 +91,32 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
+# ────────────────────────────────────────────────
+# INTERNATIONALIZATION
+# ────────────────────────────────────────────────
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
+# ────────────────────────────────────────────────
+# STATIC & MEDIA FILES (REQUIRED FOR RENDER)
+# ────────────────────────────────────────────────
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Custom static files
-STATIC_ROOT = BASE_DIR / 'staticfiles'    # Collected static files for production
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Security settings for production
-if not DEBUG:
+# ────────────────────────────────────────────────
+# SECURITY SETTINGS (ACTIVE ONLY IN PRODUCTION)
+# ────────────────────────────────────────────────
+if not DEBUG:  
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True

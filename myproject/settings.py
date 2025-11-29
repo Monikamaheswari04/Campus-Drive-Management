@@ -3,31 +3,26 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✔ SECRET KEY (use Render env variable or fallback for local)
+
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
     'django-insecure-65w^ta3gw8%w7j5fcf54bgizjru07z6=x5kz%4kj-124_7uemg'
 )
 
-# ✔ DEBUG (Render will set DJANGO_DEBUG=False)
+
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-# ────────────────────────────────────────────────
-# ✔ FLEXIBLE HOST SETTINGS (NO NEED TO EDIT AGAIN)
-# ────────────────────────────────────────────────
 
 # Allow all hosts (good for Render and student projects)
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
-# Allow all CSRF trusted origins (good for Render deploys)
+
 CSRF_TRUSTED_ORIGINS = os.environ.get(
     "CSRF_TRUSTED_ORIGINS",
     "https://*"
 ).split(",")
 
-# ────────────────────────────────────────────────
-# INSTALLED APPS
-# ────────────────────────────────────────────────
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,9 +34,7 @@ INSTALLED_APPS = [
     'myapp',
 ]
 
-# ────────────────────────────────────────────────
-# MIDDLEWARE
-# ────────────────────────────────────────────────
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -56,9 +49,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myproject.urls'
 
-# ────────────────────────────────────────────────
-# TEMPLATES
-# ────────────────────────────────────────────────
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -77,9 +68,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-# ────────────────────────────────────────────────
-# DATABASE
-# ────────────────────────────────────────────────
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,9 +76,7 @@ DATABASES = {
     }
 }
 
-# ────────────────────────────────────────────────
-# PASSWORD VALIDATION
-# ────────────────────────────────────────────────
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -97,17 +84,13 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# ────────────────────────────────────────────────
-# INTERNATIONALIZATION
-# ────────────────────────────────────────────────
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# ────────────────────────────────────────────────
-# STATIC & MEDIA FILES (REQUIRED FOR RENDER)
-# ────────────────────────────────────────────────
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -119,9 +102,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ────────────────────────────────────────────────
-# SECURITY SETTINGS (ACTIVE ONLY IN PRODUCTION)
-# ────────────────────────────────────────────────
+
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -129,3 +110,4 @@ if not DEBUG:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
     SECURE_SSL_REDIRECT = True
+

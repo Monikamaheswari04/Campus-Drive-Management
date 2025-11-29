@@ -13,11 +13,17 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 # ✔ ALLOWED_HOSTS (works for Render)
+
 ALLOWED_HOSTS = [
-    'campus-drive-system.onrender.com',
+    'campus-drive-sys.onrender.com',
     'localhost',
     '127.0.0.1'
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://campus-drive-sys.onrender.com'
+]
+
 
 # ────────────────────────────────────────────────
 # INSTALLED APPS
@@ -123,3 +129,4 @@ if not DEBUG:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
     SECURE_SSL_REDIRECT = True
+

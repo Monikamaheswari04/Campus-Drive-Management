@@ -12,18 +12,18 @@ SECRET_KEY = os.environ.get(
 # ✔ DEBUG (Render will set DJANGO_DEBUG=False)
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-# ✔ ALLOWED_HOSTS (works for Render)
+# ────────────────────────────────────────────────
+# ✔ FLEXIBLE HOST SETTINGS (NO NEED TO EDIT AGAIN)
+# ────────────────────────────────────────────────
 
-ALLOWED_HOSTS = [
-    'campus-drive-sys.onrender.com',
-    'localhost',
-    '127.0.0.1'
-]
+# Allow all hosts (good for Render and student projects)
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://campus-drive-sys.onrender.com'
-]
-
+# Allow all CSRF trusted origins (good for Render deploys)
+CSRF_TRUSTED_ORIGINS = os.environ.get(
+    "CSRF_TRUSTED_ORIGINS",
+    "https://*"
+).split(",")
 
 # ────────────────────────────────────────────────
 # INSTALLED APPS
@@ -122,11 +122,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ────────────────────────────────────────────────
 # SECURITY SETTINGS (ACTIVE ONLY IN PRODUCTION)
 # ────────────────────────────────────────────────
-if not DEBUG:  
+if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
     SECURE_SSL_REDIRECT = True
-
